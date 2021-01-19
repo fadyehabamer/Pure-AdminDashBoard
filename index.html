@@ -1,0 +1,1143 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css">
+  <title>Task 01</title>
+</head>
+
+<body>
+  <div id="overlay" class="overlay active"></div>
+  <div class="dashboard-body" id="dashboard-body">
+
+    <!-- start navigation side bar -->
+    <div class="sidebar active" id="sidebar">
+
+      <div class="user-info">
+        <h1>FAN Analysis</h1>
+        <div class="user-image">
+          <div></div>
+        </div>
+        <div class="user-name">
+          <h3>Cathy Murray</h3>
+          <p>ID:5768439</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="sb-ul">
+          <li class="op active">
+            <i class="fas fa-chart-pie"></i>
+            <p>overview</p>
+          </li>
+
+          <li class="op">
+            <i class="fas fa-user-alt"></i>
+            <p>fans data</p>
+          </li>
+
+          <li class="op">
+            <i class="fas fa-money-check-alt"></i>
+            <p>income</p>
+          </li>
+
+          <li class="op">
+            <i class="far fa-image"></i>
+            <p>works</p>
+          </li>
+
+          <li class="op">
+            <i class="far fa-comment-dots"></i>
+            <p>
+              messages
+              <span>106</span>
+            </p>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="navbar-end">
+        <div class="logout">
+          <a href="#">
+            <i class="fas fa-power-off"></i>
+            <p>logout</p>
+          </a>
+        </div>
+        <div>
+          <p>@ 2019 Fan Analysis LLC</p>
+        </div>
+        <!-- bottom curve
+      <div class="bottom-curve">
+        
+      </div> -->
+      </div>
+
+    </div>
+    <!-- end navigation bar -->
+
+    <!--start main data -->
+    <div class="main-data active" id="main-data">
+      <!-- start nav icons -->
+      <div class="nav-icons">
+        <ul>
+          <li><i class="fas fa-search"></i></li>
+          <li>
+            <i class="far fa-bell"></i>
+          </li>
+          <li id="bars"><i class="fas fa-bars"></i></li>
+        </ul>
+      </div>
+      <!-- end nav icons -->
+
+      <!-- start overall data -->
+
+      <div class="overall">
+        <h2>Overall Data</h2>
+        <ul>
+          <li class="">Today</li>
+
+          <li class="active">Last 7 days</li>
+
+          <li class="">Last 30 days</li>
+
+          <li class="">Last 90 days</li>
+
+          <li class="">All time</li>
+        </ul>
+      </div>
+
+      <!-- start statistic data -->
+      <div class="card-container">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">
+              <h4>Fans Data</h4>
+              <p class="card-number">
+                <span>2387</span>
+                <i class="fas fa-long-arrow-alt-up"></i>
+              </p>
+            </div>
+            <div class="card-icon">
+              <i class="fas fa-user-alt"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">
+              <h4>Income</h4>
+              <p class="card-number">
+                <span>3920</span>
+                <i class="fas fa-long-arrow-alt-up"></i>
+              </p>
+            </div>
+            <div class="card-icon">
+              <i class="fas fa-money-check-alt" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">
+              <h4>Works</h4>
+              <p class="card-number">
+                <span>12</span>
+                <i class="fas fa-long-arrow-alt-up"></i>
+              </p>
+            </div>
+            <div class="card-icon">
+              <i class="fas fa-image" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">
+              <h4>Messages</h4>
+              <p class="card-number">
+                <span>831</span>
+                <i class="fas fa-long-arrow-alt-up"></i>
+              </p>
+            </div>
+            <div class="card-icon">
+              <i class="fas fa-comment-dots" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end statistic data -->
+      <!-- end overall data -->
+
+      <!-- start graphs -->
+      <div class="charts">
+        <!-- bars -->
+        <div class="chart-card bars">
+          <div class="chart-title">
+            <h6>Fans Increase</h6>
+
+            <div>
+              <div class="fan-type">
+                <p class="male">Male Fans</p>
+                <p class="female">Female Fans</p>
+              </div>
+              <div class="dropdown bar" id="dropdown-bars">
+                <p>
+                  <span id="bar_span" class="active"> Last 7 days </span>
+                  <i class="fas fa-sort-down"></i>
+                </p>
+                <div class="drop-menu" id="dropdown-menu-bars">
+                  <ul class="drop-ul bars">
+                    <li class="bar_op">All time</li>
+
+                    <li class="bar_op">Last 90 days</li>
+
+                    <li class="bar_op">Last 30 days</li>
+
+                    <li class="bar_op active">Last 7 days</li>
+
+                    <li class="bar_op">Today</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bar-con">
+            <canvas id="bar-chart" width="800" height="450"></canvas>
+          </div>
+        </div>
+
+        <!-- pie -->
+        <div class="chart-card pie">
+          <div class="chart-title">
+            <h6>Income</h6>
+            <div>
+              <div class="dropdown" id="dropdown-pie">
+                <p>
+                  <span id="pie_span" class="active"> Last 7 days </span>
+                  <i class="fas fa-sort-down"></i>
+                </p>
+                <div class="drop-menu" id="dropdown-menu-pie">
+                  <ul class="drop-ul pie">
+                    <li class="">All time</li>
+
+                    <li class="">Last 90 days</li>
+
+                    <li class="">Last 30 days</li>
+
+                    <li class="active">Last 7 days</li>
+
+                    <li class="">Today</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pie-con">
+            <!-- <div id="chartContainer" style="height: 200px; width: 100%;"></div> -->
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="pie-cards-con">
+            <div class="pie-card ">
+              <p>Ads</p>
+              <p>46.3%</p>
+              <p>$4371</p>
+            </div>
+            <div class="pie-card ">
+              <p class="two">Rewards</p>
+              <p>32.6%</p>
+              <p>$5017.92</p>
+            </div>
+            <div class="pie-card ">
+              <p class="three">Base pay</p>
+              <p>21.1%</p>
+              <p>$3427.53</p>
+            </div>
+          </div>
+        </div>
+        <!-- end graphs-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <!-- end graphs -->
+      <!-- start table section -->
+      <div class="table">
+        <div class="table-card">
+          <div class="table-header">
+            <h5>Fans Increase</h5>
+            <div class="dropdown" id="dropdown-table">
+              <p>
+                <span id="table_span" class="active"> Last 7 days </span>
+                <i class="fas fa-sort-down"></i>
+              </p>
+              <div class="drop-menu " id="dropdown-menu-table">
+                <ul class="drop-ul table">
+                  <li class="">All time</li>
+
+                  <li class="">Last 90 days</li>
+
+                  <li class="">Last 30 days</li>
+
+                  <li class="active">Last 7 days</li>
+
+                  <li class="">Today</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- --------------------------------------- -->
+          <div class="table-content">
+            <div class="table-first">
+
+              <div>id</div>
+
+              <div>name</div>
+
+              <div>username</div>
+
+              <div>email</div>
+
+              <div>phone</div>
+
+              <div>website</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>1</div>
+
+              <div>Leanne Graham</div>
+
+              <div>Bret</div>
+
+              <div>Sincere@april.biz</div>
+
+              <div>1-770-736-8031 x56442</div>
+
+              <div>hildegard.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>2</div>
+
+              <div>Ervin Howell</div>
+
+              <div>Antonette</div>
+
+              <div>Shanna@melissa.tv</div>
+
+              <div>010-692-6593 x09125</div>
+
+              <div>anastasia.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>3</div>
+
+              <div>Clementine Bauch</div>
+
+              <div>Samantha</div>
+
+              <div>Nathan@yesenia.net</div>
+
+              <div>1-463-123-4447</div>
+
+              <div>ramiro.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>4</div>
+
+              <div>Patricia Lebsack</div>
+
+              <div>Karianne</div>
+
+              <div>Julianne.OConner@kory.org</div>
+
+              <div>493-170-9623 x156</div>
+
+              <div>kale.biz</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>5</div>
+
+              <div>Chelsey Dietrich</div>
+
+              <div>Kamren</div>
+
+              <div>Lucio_Hettinger@annie.ca</div>
+
+              <div>(254)954-1289</div>
+
+              <div>demarco.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>6</div>
+
+              <div>Mrs. Dennis Schulist</div>
+
+              <div>Leopoldo_Corkery</div>
+
+              <div>Karley_Dach@jasper.info</div>
+
+              <div>1-477-935-8478 x6430</div>
+
+              <div>ola.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>7</div>
+
+              <div>Kurtis Weissnat</div>
+
+              <div>Elwyn.Skiles</div>
+
+              <div>Telly.Hoeger@billy.biz</div>
+
+              <div>210.067.6132</div>
+
+              <div>elvis.io</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>8</div>
+
+              <div>Nicholas Runolfsdottir V</div>
+
+              <div>Maxime_Nienow</div>
+
+              <div>Sherwood@rosamond.me</div>
+
+              <div>586.493.6943 x140</div>
+
+              <div>jacynthe.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>9</div>
+
+              <div>Glenna Reichert</div>
+
+              <div>Delphine</div>
+
+              <div>Chaim_McDermott@dana.io</div>
+
+              <div>(775)976-6794 x41206</div>
+
+              <div>conrad.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>10</div>
+
+              <div>Clementina DuBuque</div>
+
+              <div>Moriah.Stanton</div>
+
+              <div>Rey.Padberg@karina.biz</div>
+
+              <div>024-648-3804</div>
+
+              <div>ambrose.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>11</div>
+
+              <div>Leanne Graham</div>
+
+              <div>Bret</div>
+
+              <div>Sincere@april.biz</div>
+
+              <div>1-770-736-8031 x56442</div>
+
+              <div>hildegard.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>12</div>
+
+              <div>Ervin Howell</div>
+
+              <div>Antonette</div>
+
+              <div>Shanna@melissa.tv</div>
+
+              <div>010-692-6593 x09125</div>
+
+              <div>anastasia.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>13</div>
+
+              <div>Clementine Bauch</div>
+
+              <div>Samantha</div>
+
+              <div>Nathan@yesenia.net</div>
+
+              <div>1-463-123-4447</div>
+
+              <div>ramiro.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>14</div>
+
+              <div>Patricia Lebsack</div>
+
+              <div>Karianne</div>
+
+              <div>Julianne.OConner@kory.org</div>
+
+              <div>493-170-9623 x156</div>
+
+              <div>kale.biz</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>15</div>
+
+              <div>Chelsey Dietrich</div>
+
+              <div>Kamren</div>
+
+              <div>Lucio_Hettinger@annie.ca</div>
+
+              <div>(254)954-1289</div>
+
+              <div>demarco.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>16</div>
+
+              <div>Mrs. Dennis Schulist</div>
+
+              <div>Leopoldo_Corkery</div>
+
+              <div>Karley_Dach@jasper.info</div>
+
+              <div>1-477-935-8478 x6430</div>
+
+              <div>ola.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>17</div>
+
+              <div>Kurtis Weissnat</div>
+
+              <div>Elwyn.Skiles</div>
+
+              <div>Telly.Hoeger@billy.biz</div>
+
+              <div>210.067.6132</div>
+
+              <div>elvis.io</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>18</div>
+
+              <div>Nicholas Runolfsdottir V</div>
+
+              <div>Maxime_Nienow</div>
+
+              <div>Sherwood@rosamond.me</div>
+
+              <div>586.493.6943 x140</div>
+
+              <div>jacynthe.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>19</div>
+
+              <div>Glenna Reichert</div>
+
+              <div>Delphine</div>
+
+              <div>Chaim_McDermott@dana.io</div>
+
+              <div>(775)976-6794 x41206</div>
+
+              <div>conrad.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>20</div>
+
+              <div>Clementina DuBuque</div>
+
+              <div>Moriah.Stanton</div>
+
+              <div>Rey.Padberg@karina.biz</div>
+
+              <div>024-648-3804</div>
+
+              <div>ambrose.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>21</div>
+
+              <div>Leanne Graham</div>
+
+              <div>Bret</div>
+
+              <div>Sincere@april.biz</div>
+
+              <div>1-770-736-8031 x56442</div>
+
+              <div>hildegard.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>22</div>
+
+              <div>Ervin Howell</div>
+
+              <div>Antonette</div>
+
+              <div>Shanna@melissa.tv</div>
+
+              <div>010-692-6593 x09125</div>
+
+              <div>anastasia.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>23</div>
+
+              <div>Clementine Bauch</div>
+
+              <div>Samantha</div>
+
+              <div>Nathan@yesenia.net</div>
+
+              <div>1-463-123-4447</div>
+
+              <div>ramiro.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>24</div>
+
+              <div>Patricia Lebsack</div>
+
+              <div>Karianne</div>
+
+              <div>Julianne.OConner@kory.org</div>
+
+              <div>493-170-9623 x156</div>
+
+              <div>kale.biz</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>25</div>
+
+              <div>Chelsey Dietrich</div>
+
+              <div>Kamren</div>
+
+              <div>Lucio_Hettinger@annie.ca</div>
+
+              <div>(254)954-1289</div>
+
+              <div>demarco.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>26</div>
+
+              <div>Mrs. Dennis Schulist</div>
+
+              <div>Leopoldo_Corkery</div>
+
+              <div>Karley_Dach@jasper.info</div>
+
+              <div>1-477-935-8478 x6430</div>
+
+              <div>ola.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>27</div>
+
+              <div>Kurtis Weissnat</div>
+
+              <div>Elwyn.Skiles</div>
+
+              <div>Telly.Hoeger@billy.biz</div>
+
+              <div>210.067.6132</div>
+
+              <div>elvis.io</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>28</div>
+
+              <div>Nicholas Runolfsdottir V</div>
+
+              <div>Maxime_Nienow</div>
+
+              <div>Sherwood@rosamond.me</div>
+
+              <div>586.493.6943 x140</div>
+
+              <div>jacynthe.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>29</div>
+
+              <div>Glenna Reichert</div>
+
+              <div>Delphine</div>
+
+              <div>Chaim_McDermott@dana.io</div>
+
+              <div>(775)976-6794 x41206</div>
+
+              <div>conrad.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>30</div>
+
+              <div>Clementina DuBuque</div>
+
+              <div>Moriah.Stanton</div>
+
+              <div>Rey.Padberg@karina.biz</div>
+
+              <div>024-648-3804</div>
+
+              <div>ambrose.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>31</div>
+
+              <div>Leanne Graham</div>
+
+              <div>Bret</div>
+
+              <div>Sincere@april.biz</div>
+
+              <div>1-770-736-8031 x56442</div>
+
+              <div>hildegard.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>32</div>
+
+              <div>Ervin Howell</div>
+
+              <div>Antonette</div>
+
+              <div>Shanna@melissa.tv</div>
+
+              <div>010-692-6593 x09125</div>
+
+              <div>anastasia.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>33</div>
+
+              <div>Clementine Bauch</div>
+
+              <div>Samantha</div>
+
+              <div>Nathan@yesenia.net</div>
+
+              <div>1-463-123-4447</div>
+
+              <div>ramiro.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>34</div>
+
+              <div>Patricia Lebsack</div>
+
+              <div>Karianne</div>
+
+              <div>Julianne.OConner@kory.org</div>
+
+              <div>493-170-9623 x156</div>
+
+              <div>kale.biz</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>35</div>
+
+              <div>Chelsey Dietrich</div>
+
+              <div>Kamren</div>
+
+              <div>Lucio_Hettinger@annie.ca</div>
+
+              <div>(254)954-1289</div>
+
+              <div>demarco.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>36</div>
+
+              <div>Mrs. Dennis Schulist</div>
+
+              <div>Leopoldo_Corkery</div>
+
+              <div>Karley_Dach@jasper.info</div>
+
+              <div>1-477-935-8478 x6430</div>
+
+              <div>ola.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>37</div>
+
+              <div>Kurtis Weissnat</div>
+
+              <div>Elwyn.Skiles</div>
+
+              <div>Telly.Hoeger@billy.biz</div>
+
+              <div>210.067.6132</div>
+
+              <div>elvis.io</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>38</div>
+
+              <div>Nicholas Runolfsdottir V</div>
+
+              <div>Maxime_Nienow</div>
+
+              <div>Sherwood@rosamond.me</div>
+
+              <div>586.493.6943 x140</div>
+
+              <div>jacynthe.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>39</div>
+
+              <div>Glenna Reichert</div>
+
+              <div>Delphine</div>
+
+              <div>Chaim_McDermott@dana.io</div>
+
+              <div>(775)976-6794 x41206</div>
+
+              <div>conrad.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>40</div>
+
+              <div>Clementina DuBuque</div>
+
+              <div>Moriah.Stanton</div>
+
+              <div>Rey.Padberg@karina.biz</div>
+
+              <div>024-648-3804</div>
+
+              <div>ambrose.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>41</div>
+
+              <div>Leanne Graham</div>
+
+              <div>Bret</div>
+
+              <div>Sincere@april.biz</div>
+
+              <div>1-770-736-8031 x56442</div>
+
+              <div>hildegard.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>42</div>
+
+              <div>Ervin Howell</div>
+
+              <div>Antonette</div>
+
+              <div>Shanna@melissa.tv</div>
+
+              <div>010-692-6593 x09125</div>
+
+              <div>anastasia.net</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>43</div>
+
+              <div>Clementine Bauch</div>
+
+              <div>Samantha</div>
+
+              <div>Nathan@yesenia.net</div>
+
+              <div>1-463-123-4447</div>
+
+              <div>ramiro.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>44</div>
+
+              <div>Patricia Lebsack</div>
+
+              <div>Karianne</div>
+
+              <div>Julianne.OConner@kory.org</div>
+
+              <div>493-170-9623 x156</div>
+
+              <div>kale.biz</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>45</div>
+
+              <div>Chelsey Dietrich</div>
+
+              <div>Kamren</div>
+
+              <div>Lucio_Hettinger@annie.ca</div>
+
+              <div>(254)954-1289</div>
+
+              <div>demarco.info</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>46</div>
+
+              <div>Mrs. Dennis Schulist</div>
+
+              <div>Leopoldo_Corkery</div>
+
+              <div>Karley_Dach@jasper.info</div>
+
+              <div>1-477-935-8478 x6430</div>
+
+              <div>ola.org</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>47</div>
+
+              <div>Kurtis Weissnat</div>
+
+              <div>Elwyn.Skiles</div>
+
+              <div>Telly.Hoeger@billy.biz</div>
+
+              <div>210.067.6132</div>
+
+              <div>elvis.io</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>48</div>
+
+              <div>Nicholas Runolfsdottir V</div>
+
+              <div>Maxime_Nienow</div>
+
+              <div>Sherwood@rosamond.me</div>
+
+              <div>586.493.6943 x140</div>
+
+              <div>jacynthe.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>49</div>
+
+              <div>Glenna Reichert</div>
+
+              <div>Delphine</div>
+
+              <div>Chaim_McDermott@dana.io</div>
+
+              <div>(775)976-6794 x41206</div>
+
+              <div>conrad.com</div>
+
+            </div>
+
+            <div class="table-row">
+
+              <div>50</div>
+
+              <div>Clementina DuBuque</div>
+
+              <div>Moriah.Stanton</div>
+
+              <div>Rey.Padberg@karina.biz</div>
+
+              <div>024-648-3804</div>
+
+              <div>ambrose.net</div>
+
+            </div>
+
+          </div>
+
+          <!-- ---------------------------------------- -->
+
+        </div>
+      </div>
+      <!-- end table section -->
+      <!-- end main data -->
+    </div>
+    <!-- END😥 -->
+
+    <!-- scripts -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://kit.fontawesome.com/1de73eac06.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
