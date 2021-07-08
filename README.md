@@ -1,4 +1,4 @@
-# Pure-DashBoard
+# Pure Admin DashBoard
 - fully responsive 
    - pure Css 
    -  JS 
