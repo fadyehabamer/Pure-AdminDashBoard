@@ -1,7 +1,7 @@
 # Pure Admin DashBoard
 - fully responsive 
    - pure Css 
-   -  JS 
+   - vanilla JS 
    
 - With Charts 
   - Charts.js Library 
